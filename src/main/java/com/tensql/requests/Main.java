@@ -1,4 +1,4 @@
-package com.tenrequeststsql.requests;
+package com.tensql.requests;
 
 import java.sql.*;
 import java.util.Scanner;
