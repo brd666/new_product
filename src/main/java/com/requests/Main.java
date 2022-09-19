@@ -1,4 +1,4 @@
-package first.progect;
+package com.requests;
 
 import java.sql.*;
 import java.util.Scanner;

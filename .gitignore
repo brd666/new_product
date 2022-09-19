@@ -1,3 +1,4 @@
 /.idea/
 /target/
-/new product.iml
+/.idea/new product.iml
+/mysql-connector-java-8.0.30.jar
