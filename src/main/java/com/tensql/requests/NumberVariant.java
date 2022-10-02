@@ -5,8 +5,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class NumberVariant extends CommandVariant {
-    private Statement stmt;
+public class NumberVariant implements CommandVariant {
+    private final Statement stmt;
+    public String name;
 
     public NumberVariant(String name, Statement stmt) {
         this.name = name;
@@ -19,14 +20,13 @@ public class NumberVariant extends CommandVariant {
             ResultSet result = stmt.executeQuery(Requests.query(name));
             ResultSetMetaData rsmd = result.getMetaData();
             int columnCount = rsmd.getColumnCount();
-
             for (int i = 0; i < columnCount; i++) {
-                System.out.print(rsmd.getColumnName(i+1) + " ");
+                System.out.printf("%-30s", rsmd.getColumnName(i+1));
             }
             System.out.println();
             while (result.next()) {
                 for (int i = 0; i < columnCount; i++) {
-                    System.out.print(result.getString(i+1) + " ");
+                    System.out.printf("%-30s", result.getString(i+1));
                 }
                 System.out.println();
             }

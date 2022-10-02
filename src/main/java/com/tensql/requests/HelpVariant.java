@@ -1,10 +1,8 @@
 package com.tensql.requests;
 
-public class HelpVariant extends CommandVariant {
+public class HelpVariant implements CommandVariant {
 
-    public HelpVariant() {
-        super.name = "help";
-    }
+    String name = "help";
 
     @Override
     public void execute() {

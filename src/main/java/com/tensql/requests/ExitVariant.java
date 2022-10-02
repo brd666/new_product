@@ -1,10 +1,8 @@
 package com.tensql.requests;
 
-public class ExitVariant extends CommandVariant  {
+public class ExitVariant implements CommandVariant  {
 
-    public ExitVariant() {
-        super.name = "exit";
-    }
+    String name = "exit";
 
     @Override
     public void execute() throws Exception  {

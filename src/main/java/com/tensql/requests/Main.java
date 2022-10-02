@@ -13,18 +13,16 @@ public class Main {
         HashMap<String, CommandVariant> result = new HashMap<>();
 
         //help
-
-        CommandVariant helpVariant = new HelpVariant();
+        HelpVariant helpVariant = new HelpVariant();
         result.put(helpVariant.name, helpVariant);
 
         //exit
-
-        CommandVariant exitVariant = new ExitVariant();
+        ExitVariant exitVariant = new ExitVariant();
         result.put(exitVariant.name, exitVariant);
 
         // 1-10
         for (int i = 1; i < 11; i++) {
-            CommandVariant cv = new NumberVariant(String.valueOf(i), stmt);
+            NumberVariant cv = new NumberVariant(String.valueOf(i), stmt);
             result.put(cv.name, cv);
         }
         return result;
@@ -40,6 +38,7 @@ public class Main {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             Statement stmt = connection.createStatement();
             HashMap<String, CommandVariant> cv = initCv(stmt);
+
             Scanner reader = new Scanner(System.in);
             try {
                 while (true) {
@@ -59,8 +58,5 @@ public class Main {
         } catch (SQLException e) {
             System.out.println("Соединение с БД не установлено");
         }
-
-
     }
-
 }
