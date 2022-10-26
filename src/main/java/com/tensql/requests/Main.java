@@ -40,16 +40,7 @@ public class Main {
         ConnectBase connectBase = new ConnectBase();
         connectBase.toConnect();
 
-        try {
-//            Driver driver = new com.mysql.cj.jdbc.Driver();
-//            DriverManager.registerDriver(driver);
-//
-//            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//            Statement stmt = connection.createStatement();
             HashMap<String, CommandVariant> cv = initCv(connectBase.stmt);
-//
-//            Initializer initializer = new Initializer();
-//            initializer.initializer();
 
             Scanner reader = new Scanner(System.in);
             try {
@@ -63,10 +54,8 @@ public class Main {
                     }
                 }
             } catch (Exception e) {
-
-            }
-
-        } finally {
+                e.printStackTrace();
+            } finally {
             try {
                 connectBase.connection.close();
             } catch (SQLException e) {
