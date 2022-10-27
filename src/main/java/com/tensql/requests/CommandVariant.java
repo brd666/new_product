@@ -1,7 +1,6 @@
 package com.tensql.requests;
 
 public interface CommandVariant {
-    void execute() throws Exception;
-
+    String execute() throws Exception;
 }
 
